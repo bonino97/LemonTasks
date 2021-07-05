@@ -89,6 +89,9 @@ a {
   display: block;
   background-color: transparent;
 }
+.btn-remove {
+  background-color: white;
+}
 
 @media (min-width: 768px) {
   .app-container {
@@ -198,6 +201,11 @@ aside {
   margin-bottom: 1rem;
   border-radius: 0.5rem;
 }
+
+.empty-task {
+  padding: 1.5rem 2rem !important;
+}
+
 .sombra {
   -webkit-box-shadow: 0px 4px 10px -3px rgba(117, 117, 117, 1);
   -moz-box-shadow: 0px 4px 10px -3px rgba(117, 117, 117, 1);

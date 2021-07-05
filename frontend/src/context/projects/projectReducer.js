@@ -49,6 +49,7 @@ const reducer = (state, action) => {
         projects: state.projects.filter(
           (project) => project.id !== action.payload
         ),
+        project: null,
       };
 
     default:
