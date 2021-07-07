@@ -8,12 +8,12 @@ const Project = ({ project }) => {
   const { actualProject } = projectsContext;
 
   const tasksContext = useContext(taskContext);
-  const { getTasksById } = tasksContext;
+  const { getTasksByProjectId } = tasksContext;
 
   //Funcion para agregar el proyecto actual
   const selectProject = (project) => {
     actualProject(project);
-    getTasksById(project.id); //Filtrar las tareas cuando se de click.
+    getTasksByProjectId(project.id); //Filtrar las tareas cuando se de click.
   };
 
   return (

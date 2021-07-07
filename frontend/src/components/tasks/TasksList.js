@@ -3,6 +3,7 @@ import Task from './Task';
 
 import projectContext from '../../context/projects/projectContext';
 import taskContext from '../../context/tasks/taskContext';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const TasksList = () => {
   //Extraer proyectos desde state inicial
@@ -16,6 +17,7 @@ const TasksList = () => {
   if (!project) return <h2>Selecciona un proyecto</h2>;
 
   const [actualProject] = project;
+  console.log(tasksProject)
 
   return (
     <Fragment>
@@ -24,9 +26,15 @@ const TasksList = () => {
         {tasksProject.length === 0 ? (
           <li className='task empty-task'>No hay tareas!</li>
         ) : (
-          tasksProject.map((task) => {
-            return <Task key={task.name} task={task}></Task>;
-          })
+          <TransitionGroup>
+            {tasksProject.map((task) => {
+              return (
+                <CSSTransition key={task.id} timeout={200} classNames='task'>
+                  <Task task={task}></Task>
+                </CSSTransition>
+              );
+            })}
+          </TransitionGroup>
         )}
       </ul>
       <button
