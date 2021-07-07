@@ -17,7 +17,7 @@ const TasksList = () => {
   if (!project) return <h2>Selecciona un proyecto</h2>;
 
   const [actualProject] = project;
-  console.log(tasksProject)
+  console.log(tasksProject);
 
   return (
     <Fragment>
